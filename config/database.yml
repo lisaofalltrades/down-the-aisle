@@ -13,20 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: rails_user
+  password: secretpassword
   socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: down-the-aisle_development
+  database: down_the_aisle_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: down-the-aisle_test
+  database: down_the_aisle_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: down-the-aisle_production
-  username: down-the-aisle
-  password: <%= ENV['DOWN-THE-AISLE_DATABASE_PASSWORD'] %>
+  database: down_the_aisle_production
+  username: down_the_aisle
+  password: <%= ENV['DOWN_THE_AISLE_DATABASE_PASSWORD'] %>
