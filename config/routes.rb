@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'about', :to => 'welcome#about', as: 'about'
 
-  resources :users
+  resources :users do
+    resources :weddings
+  end
+
   resources :sessions
 
   root :to => 'welcome#index'
