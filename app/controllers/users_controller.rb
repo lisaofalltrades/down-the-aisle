@@ -8,10 +8,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user && @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'Your account has been created.'
+      redirect_to user_weddings_path(@user), notice: 'Your account has been created.'
     else
       render :new
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
 
