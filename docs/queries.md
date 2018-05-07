@@ -10,6 +10,11 @@
 
 ## User UI/UX
 
+### Greet current user by first name
+```ruby
+User.find(session[:user_id]).first_name
+```
+
 ### Create a wedding
 ```ruby
 Wedding.create(nickname: 'jamesnlisa-sac', user_id: 1)
