@@ -3,9 +3,32 @@
 
 <% if @weddings %>
   <% @weddings.each do |wedding| %>
-  <div>
-    <a href="/users/<%= @user.id %>/weddings/<%= wedding.id %>">
-    <%= wedding.nickname %></a>
-  </div>
+  <div class="wedding-container">
+    <div class="wedding-overview">
+
+      <container> <!-- begin wedding-stats -->
+        <div class="wedding-nickname">
+          <a href="/users/<%= @user.id %>/weddings/<%= wedding.id %>">
+        <%= wedding.nickname %></a>
+        </div>
+
+        <div class="wedding-date">
+          <%= wedding.date %>
+        </div>
+
+        <div class="wedding-countdown">
+          <% end_time = wedding.date %>
+          <% start_time = Date.today %>
+          <%= (end_time - start_time).to_i %> Days left!
+        </div>
+
+        <div class="wedding-guests">
+          Guestlist: <%= wedding.guests.count %>
+        </div>
+
+      </container> <!-- end wedding-stats -->
+
+    </div> <!-- end wedding-overview -->
+  </div> <!-- end wedding-container -->
   <% end %>
 <% end %>
