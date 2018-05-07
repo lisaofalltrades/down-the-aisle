@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  dietary_restrictions: MyString
+  child: false
+  category: MyString
+  household: one
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  dietary_restrictions: MyString
+  child: false
+  category: MyString
+  household: two
