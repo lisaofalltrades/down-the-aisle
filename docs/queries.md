@@ -10,6 +10,11 @@
 
 ## User UI/UX
 
+### Greet current user by first name
+```ruby
+User.find(session[:user_id]).first_name
+```
+
 ### Create a wedding
 ```ruby
 Wedding.create(nickname: 'jamesnlisa-sac', user_id: 1)
@@ -17,7 +22,7 @@ Wedding.create(nickname: 'jamesnlisa-sac', user_id: 1)
 
 ### Show all weddings belonging to a user
 ```ruby
-User.find(1).weddings
+User.find(1).weddings.order(date: :asc)
 ```
 
 ### Create an event belonging to a specific wedding
@@ -27,7 +32,7 @@ Event.create(title: 'Friday Night Mingle', location: 'Regency Restaurant', addre
 
 ### Show all events belonging to a wedding
 ```ruby
-Wedding.find(1).events
+Wedding.find(1).events.order(date: :asc)
 ```
 
 ### Create new household to specific wedding
@@ -37,7 +42,7 @@ Household.create(name: 'Nguyen Family', address: '123 Main Street', wedding_id: 
 
 ### Show all households for a certain wedding
 ```ruby
-Wedding.find(1).households
+Wedding.find(1).households.order(:name :asc)
 ```
 
 ### Show households count per wedding
@@ -58,12 +63,24 @@ Wedding.find(1).guests.count
 
 ```ruby
 #asc by last name
-Event.find(3).guests.order(last_name: :asc)
-```
+Wedding.find(1).guests.order(last_name: :asc)
 
-### Show all guests grouped by household
-```ruby
-Event.find(3).guests.order(household_id: :asc)
+# grouped by household
+Wedding.find(3).guests.order(household_id: :asc)
+
+# grouped by missing addresses
+
+# grouped by missing first name
+
+# Ex: Uncle 2, Aunt 4
+
+# grouped by missing last name
+
+# grouped by invites NOT created
+
+# grouped by pending RSVPs
+
+
 ```
 
 ### Show all guests grouped by table assignment per event

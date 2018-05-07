@@ -1,0 +1,19 @@
+<%= form_for [@user, @wedding] do |f| %>
+
+  <% if @wedding.errors.any? %>
+    <div class="error_messages">
+      <h2>Please fix the following errors:</h2>
+      <ul>
+        <%= @wedding.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :nickname, placeholder: 'Nickname', required: true  %><br>
+
+  <%= f.date_field :date %><br>
+
+  <%= f.submit %>
+<% end %>
