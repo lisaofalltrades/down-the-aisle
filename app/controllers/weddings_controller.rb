@@ -7,7 +7,7 @@ class WeddingsController < ApplicationController
   def show
     @wedding = Wedding.find(params[:id])
   end
-  
+
   def new
     @user = User.find(session[:user_id])
     @wedding = Wedding.new
@@ -41,7 +41,7 @@ class WeddingsController < ApplicationController
 
     if @wedding.update(wedding_params)
       p "Your wedding has been saved."
-      redirect_to @wedding
+      redirect_to user_wedding_path(@wedding)
     else
       p "Your wedding DID NOT save."
       render 'edit'
@@ -57,6 +57,6 @@ class WeddingsController < ApplicationController
 
   private
     def wedding_params
-      params.require(:wedding).permit(:nickname, :user_id)
+      params.require(:wedding).permit(:nickname, :user_id, :date)
     end
 end
