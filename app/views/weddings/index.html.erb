@@ -1,1 +1,11 @@
-<h1>You have logged in.</h1>
+<h1>Hello <%= @user.first_name %></h1>
+<h2>View all your weddings below:</h2>
+
+<% if @weddings %>
+  <% @weddings.each do |wedding| %>
+  <div>
+    <a href="/users/<%= @user.id %>/weddings/<%= wedding.id %>">
+    <%= wedding.nickname %></a>
+  </div>
+  <% end %>
+<% end %>
