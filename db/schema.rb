@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 2018_05_06_220645) do
     t.string "title"
     t.string "location"
     t.string "address"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.date "date"
+    t.time "start_time"
+    t.time "end_time"
     t.bigint "wedding_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 2018_05_06_220645) do
 
   create_table "weddings", force: :cascade do |t|
     t.string "nickname"
+    t.date "date"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
