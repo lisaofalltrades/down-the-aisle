@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  save_the_date_created: false
+  save_the_date_sent: false
+  invite_created: false
+  invite_sent: false
+
+two:
+  name: MyString
+  address: MyString
+  save_the_date_created: false
+  save_the_date_sent: false
+  invite_created: false
+  invite_sent: false

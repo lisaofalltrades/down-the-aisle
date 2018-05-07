@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: one
+  guest: one
+  attending: false
+  comment: MyText
+  table_assignment: false
+
+two:
+  event: two
+  guest: two
+  attending: false
+  comment: MyText
+  table_assignment: false
